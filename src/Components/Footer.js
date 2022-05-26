@@ -161,17 +161,36 @@ const Footer = () => {
 
     <div className="grid lg:grid-cols-4 md:grid-cols-2">
       <div className="mb-6">
-        <h5 className="uppercase font-bold mb-2.5">Links</h5>
+        <h5 className="uppercase font-bold mb-2.5">Need Help?</h5>
 
         <ul className="list-none mb-0">
           <li>
-            <a href="#!" className="text-white">Link 1</a>
+            <a href="#!" className="text-white">Help Center</a>
           </li>
           <li>
-            <a href="#!" className="text-white">Link 2</a>
+            <a href="#!" className="text-white">Email Support</a>
           </li>
           <li>
-            <a href="#!" className="text-white">Link 3</a>
+            <a href="#!" className="text-white">Live Chat</a>
+          </li>
+          <li>
+            <a href="#!" className="text-white">Send Us Feedback</a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="mb-6">
+        <h5 className="uppercase font-bold mb-2.5">Digital Resources</h5>
+
+        <ul className="list-none mb-0">
+          <li>
+            <a href="#!" className="text-white">Therapy</a>
+          </li>
+          <li>
+            <a href="#!" className="text-white">Resources</a>
+          </li>
+          <li>
+            <a href="#!" className="text-white">Nutritious Diet</a>
           </li>
           <li>
             <a href="#!" className="text-white">Link 4</a>
@@ -180,59 +199,35 @@ const Footer = () => {
       </div>
 
       <div className="mb-6">
-        <h5 className="uppercase font-bold mb-2.5">Links</h5>
+        <h5 className="uppercase font-bold mb-2.5">Join Our Newsletter</h5>
 
         <ul className="list-none mb-0">
           <li>
-            <a href="#!" className="text-white">Link 1</a>
+            <a href="#!" className="text-white">Get Exclusive news</a>
           </li>
           <li>
-            <a href="#!" className="text-white">Link 2</a>
+            <a href="#!" className="text-white">Features and updates</a>
           </li>
           <li>
-            <a href="#!" className="text-white">Link 3</a>
+            <a href="#!" className="text-white">From the trainers</a>
           </li>
           <li>
-            <a href="#!" className="text-white">Link 4</a>
+            <a href="#!" className="text-white">Weight Loss Academy</a>
           </li>
         </ul>
       </div>
 
       <div className="mb-6">
-        <h5 className="uppercase font-bold mb-2.5">Links</h5>
+        <h5 className="uppercase font-bold mb-2.5">Fitness</h5>
 
         <ul className="list-none mb-0">
           <li>
-            <a href="#!" className="text-white">Link 1</a>
+            <a href="#!" className="text-white">Healthy Diet</a>
           </li>
           <li>
-            <a href="#!" className="text-white">Link 2</a>
+            <a href="#!" className="text-white">Exercises</a>
           </li>
-          <li>
-            <a href="#!" className="text-white">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" className="text-white">Link 4</a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="mb-6">
-        <h5 className="uppercase font-bold mb-2.5">Links</h5>
-
-        <ul className="list-none mb-0">
-          <li>
-            <a href="#!" className="text-white">Link 1</a>
-          </li>
-          <li>
-            <a href="#!" className="text-white">Link 2</a>
-          </li>
-          <li>
-            <a href="#!" className="text-white">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" className="text-white">Link 4</a>
-          </li>
+         
         </ul>
       </div>
     </div>
