@@ -56,6 +56,9 @@ const MapComponent = () => {
     }
 
     return (
+        <>
+     Let's Flex
+     <input id="searchInput" className="controls" type="text" placeholder="Enter a location"></input>
         <LoadScript googleMapsApiKey='AIzaSyBOZAsPx9-btmZEjX12TC1Qxb-NcJIXqks'>
             <GoogleMap 
                 mapContainerStyle={containerStyle} 
@@ -83,6 +86,7 @@ const MapComponent = () => {
                 ))}
             </GoogleMap>
         </LoadScript>
+        </>
     );
 };
 

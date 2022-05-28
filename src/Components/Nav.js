@@ -5,7 +5,9 @@ const Nav = () => {
     let Links =[
       {name:"Home",link:"/"},
       {name:"About",link:"/"},
-      {name:"Equipment/Classes",link:"/"},
+      {name:"Equipment",link:"/"},
+      {name:"Bmi",link:"/"},
+      {name:"Find a Gym",link:"/"},
       {name:"Pricing",link:"/"},
       {name:"Contact",link:"/"},
     ];
@@ -34,9 +36,11 @@ const Nav = () => {
             </li>
           ))
         }
-
+  <button className="bg-gray-900 text-white px-3 py-2 border hover:bg-gray-600">
+          Sign in
+        </button>
         <button className="bg-red-600 text-white px-3 py-2 border hover:bg-red-800">
-          Sign In/Sign Up
+          Sign Up
         </button>
       </ul>
       </div>

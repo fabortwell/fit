@@ -4,9 +4,11 @@ import './App.css';
 import Nav from './Components/Nav'
 import About from './Components/About';
 import Equipment from './Components/Equipment';
-// import Footer from './Components/Footer'
+import Footer from './Components/Footer'
 import Bmi from './Components/Bmi'
 import Pricing from './Components/Pricing'
+import MapComponent from './Components/MapComponent';
+
 
 
 
@@ -19,7 +21,8 @@ function App() {
 <Equipment />
 <Bmi />
 <Pricing />
-{/* <Footer /> */}
+<MapComponent />
+<Footer />
     </div>
   );
 }
