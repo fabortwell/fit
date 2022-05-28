@@ -88,6 +88,19 @@ export class CurrentLocation extends React.Component {
         });
       }
 
+      render() {
+        const style = Object.assign({}, mapStyles.map);
+    
+        return (
+          <div>
+            <div style={style} ref="map">
+              Loading map...
+            </div>
+            {this.renderChildren()}
+          </div>
+        );
+      }
+    
 
       componentDidMount() {
         if (this.props.centerAroundCurrentLocation) {
