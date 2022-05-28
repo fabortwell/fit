@@ -1,6 +1,7 @@
 
 import React from "react";
 import { useState } from "react";
+import  './Bmi.css'
 
 export default function App() {
   const [height, setHeight] = useState("");
@@ -60,14 +61,14 @@ export default function App() {
             className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="Weight"
             type="Weight in kg"
-            placeholder="Weight in cm"
+            placeholder="Weight in kg"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
           />
         </div>
         <div className="flex items-center justify-center">
           <button
-            className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
             onClick={calculateBMI}
           >
