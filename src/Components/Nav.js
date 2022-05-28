@@ -1,12 +1,16 @@
 import React, {useState} from 'react'
+import { Menu } from '@headlessui/react'
+import Bmi from './Bmi'
+
+
 
 
 const Nav = () => {
+  const[click, setClick] = useState(true)
     let Links =[
       {name:"Home",link:"/"},
       {name:"About",link:"/"},
       {name:"Equipment",link:"/"},
-      {name:"Bmi",link:"/"},
       {name:"Find a Gym",link:"/"},
       {name:"Pricing",link:"/"},
       {name:"Contact",link:"/"},
@@ -36,6 +40,34 @@ const Nav = () => {
             </li>
           ))
         }
+
+  {/* <Menu>
+<Menu.Button>
+  Bmi
+</Menu.Button>
+<Menu.Items>
+  <Menu.Item>
+  {({ active }) => (
+            <a
+              className={`${active && 'bg-blue-500'}`}
+              href="/account-settings"
+            >
+              Documentation
+            </a>
+          )}
+  </Menu.Item>
+</Menu.Items>
+  </Menu> */}
+
+
+
+<span onClick={(previousValue)=>setClick(!previousValue)} className='md:ml-8 text-xl md:my-0 my-7'>
+              <a className='text-gray-800 hover:text-gray-400 duration-500' > Bmi </a>
+            </span>
+
+
+
+
   <button className="bg-gray-900 text-white px-3 py-2 border hover:bg-gray-600 ml-8">
           Sign in
         </button>
@@ -45,8 +77,13 @@ const Nav = () => {
       </ul>
       </div>
     </div> 
+  
    <div className='hero'> 
-    <img src="https://cdn.shopify.com/s/files/1/0078/6006/0207/files/iFitNut-Web_Hero-Desktop_1.jpg?v=1609781276" alt="fit" />
+   {/* <div className={click ? "hidden" : null}>
+   <Bmi />
+   </div> */}
+ 
+    <img src="https://cdn.shopify.com/s/files/1/0078/6006/0207/files/iFitNut-Web_Hero-Desktop_1.jpg?v=1609781276" alt="fit" className="hero-img"/>
   </div> 
    </div>
   )

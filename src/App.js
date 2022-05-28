@@ -8,7 +8,8 @@ import Footer from './Components/Footer'
 import Bmi from './Components/Bmi'
 import Pricing from './Components/Pricing'
 import MapComponent from './Components/MapComponent';
-
+import { render } from "react-dom";
+import { LoadScript } from "@react-google-maps/api";
 
 
 
@@ -21,7 +22,7 @@ function App() {
 <Nav />
 <About />
 <Equipment />
-<Bmi />
+{/* <Bmi /> */}
 <Pricing />
 <MapComponent />
 <Footer />

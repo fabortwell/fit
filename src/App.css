@@ -2,9 +2,20 @@
 .photo{
 height: 250px;
 }
+/* 
+.hero-img{
+  position: relative;
 
+} */
 
+h1, p {
+  font-family: Lato;
+}
 
+div{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 .App {
   text-align: center;
 }
