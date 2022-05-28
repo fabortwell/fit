@@ -6,6 +6,7 @@ import About from './Components/About';
 import Equipment from './Components/Equipment';
 // import Footer from './Components/Footer'
 import Bmi from './Components/Bmi'
+import Pricing from './Components/Pricing'
 
 
 
@@ -17,6 +18,7 @@ function App() {
 <About />
 <Equipment />
 <Bmi />
+<Pricing />
 {/* <Footer /> */}
     </div>
   );
