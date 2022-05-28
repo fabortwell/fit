@@ -3,7 +3,7 @@ import React from 'react'
 const Pricing = () => {
   return (
    <>
-  <section className="pt-20 pb-24 2xl:py-40 bg-gray-800">
+  <section className="pt-5 pb-24 2xl:py-40">
   <div className="container mx-auto px-4">
     <div className="mb-16 md:mb-24 text-center">
       <h2 className="mb-8 md:mb-14 text-5xl lg:text-6xl 2xl:text-7xl text-white font-bold font-heading">Choose a plan</h2>
@@ -11,7 +11,7 @@ const Pricing = () => {
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-wrap items-center -mx-3">
         <div className="w-full lg:w-1/3 px-3 mb-8 lg:mb-0">
-          <div className="px-12 py-16 bg-gray-500 rounded-3xl">
+          <div className="px-12 py-16 bg-gray-900 rounded-3xl">
             <div className="pb-8 mb-14 border-b border-gray-400">
               <div className="flex justify-between items-center px-3">
                 <h3 className="text-4xl text-white font-bold font-heading">Free</h3>
@@ -101,7 +101,7 @@ const Pricing = () => {
           </div>
         </div>
         <div className="w-full lg:w-1/3 px-3">
-          <div className="px-12 py-16 bg-gray-500 rounded-3xl">
+          <div className="px-12 py-16 bg-gray-900 rounded-3xl">
             <div className="pb-8 mb-14 border-b border-gray-400">
               <div className="flex justify-between items-center px-3">
                 <h3 className="text-4xl text-white font-bold font-heading">Premium</h3>

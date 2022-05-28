@@ -17,7 +17,7 @@ const Nav = () => {
    <div className=' navbar shadow-md w-full fixed top-0 left-0'>
       <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
       <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
-      text-gray-800'>
+      text-white-800'>
         <span className='text-3xl text-red-600 mr-1 pt-2'>
         <ion-icon name="logo-ionic"></ion-icon>
         </span>
@@ -36,10 +36,10 @@ const Nav = () => {
             </li>
           ))
         }
-  <button className="bg-gray-900 text-white px-3 py-2 border hover:bg-gray-600">
+  <button className="bg-gray-900 text-white px-3 py-2 border hover:bg-gray-600 ml-8">
           Sign in
         </button>
-        <button className="bg-red-600 text-white px-3 py-2 border hover:bg-red-800">
+        <button className="bg-red-600 text-white px-3 py-2 border hover:bg-red-800 ml-8">
           Sign Up
         </button>
       </ul>

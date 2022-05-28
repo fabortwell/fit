@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GoogleMap, InfoWindow, LoadScript, Marker } from "@react-google-maps/api";
 
+
 const MapComponent = () => {
     const initialMarkers = [
         {
@@ -57,8 +58,7 @@ const MapComponent = () => {
 
     return (
         <>
-     Let's Flex
-     <input id="searchInput" className="controls" type="text" placeholder="Enter a location"></input>
+        <h1>Let's Flex</h1>
         <LoadScript googleMapsApiKey='AIzaSyBOZAsPx9-btmZEjX12TC1Qxb-NcJIXqks'>
             <GoogleMap 
                 mapContainerStyle={containerStyle} 
