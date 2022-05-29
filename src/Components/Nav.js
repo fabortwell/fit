@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import { Menu } from '@headlessui/react'
-import Bmi from './Bmi'
 import { Link } from "react-router-dom";
 
 
@@ -62,10 +61,6 @@ const Nav = () => {
     </div> 
   
    <div className='hero'> 
-   {/* <div className={click ? "hidden" : null}>
-   <Bmi />
-   </div> */}
- 
     <img src="https://cdn.shopify.com/s/files/1/0078/6006/0207/files/iFitNut-Web_Hero-Desktop_1.jpg?v=1609781276" alt="fit" className="hero-img"/>
   </div> 
    </div>
@@ -73,3 +68,7 @@ const Nav = () => {
 }
 
 export default Nav
+
+
+
+
