@@ -15,12 +15,12 @@ Google maps API
 PayPal API
 
 
-#### Setup Instructions and Installation
-Clone this repository to a location in your file system. git clone https://github.com/fabortwell/Personal-Portfolio.git
+## Setup Instructions and Installation
+Clone this repository to a location in your file system. git clone https://github.com/fabortwell/fit.git
 Open terminal command line then navigate to the root folder of the application. cd fit
 Open file on your Browser by npm start fit 
 
-#### Development
+## Development
 Want to contribute? Great! To fix a bug or enhance an existing module, follow these steps:
 
 Fork the repo
