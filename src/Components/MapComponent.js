@@ -94,56 +94,204 @@
 
 
 
+// import React, { Component } from 'react';
+// import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
-import React, { Component } from 'react';
-import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+// import CurrentLocation from './CurrentLocation';
 
-import CurrentLocation from './Map';
+// export class MapContainer extends Component {
+//   state = {
+//     showingInfoWindow: false,
+//     activeMarker: {},
+//     selectedPlace: {}
+//   };
 
-export class MapContainer extends Component {
-  state = {
-    showingInfoWindow: false,
-    activeMarker: {},
-    selectedPlace: {}
-  };
+//   onMarkerClick = (props, marker, e) =>
+//     this.setState({
+//       selectedPlace: props,
+//       activeMarker: marker,
+//       showingInfoWindow: true
+//     });
 
-  onMarkerClick = (props, marker, e) =>
-    this.setState({
-      selectedPlace: props,
-      activeMarker: marker,
-      showingInfoWindow: true
-    });
+//   onClose = props => {
+//     if (this.state.showingInfoWindow) {
+//       this.setState({
+//         showingInfoWindow: false,
+//         activeMarker: null
+//       });
+//     }
+//   };
 
-  onClose = props => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
-      });
-    }
-  };
+//   render() {
+//     return (
+//       <CurrentLocation
+//         centerAroundCurrentLocation
+//         google={this.props.google}
+//       >
+//         <Marker onClick={this.onMarkerClick} name={'Current Location'} />
+//         <InfoWindow
+//           marker={this.state.activeMarker}
+//           visible={this.state.showingInfoWindow}
+//           onClose={this.onClose}
+//         >
+//           <div>
+//             <h4>{this.state.selectedPlace.name}</h4>
+//           </div>
+//         </InfoWindow>
+//       </CurrentLocation>
+//     );
+//   }
+// }
 
-  render() {
-    return (
-      <CurrentLocation
-        centerAroundCurrentLocation
-        google={this.props.google}
-      >
-        <Marker onClick={this.onMarkerClick} name={'Current Location'} />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
-      </CurrentLocation>
-    );
-  }
+// export default GoogleApiWrapper({
+//   apiKey: 'AIzaSyBOZAsPx9-btmZEjX12TC1Qxb-NcJIXqks'
+// })(MapContainer);
+
+
+
+// import React, { Component } from 'react';
+// import { Map, GoogleApiWrapper } from 'google-maps-react';
+
+// const mapStyles = {
+//   width: '100%',
+//   height: '100%'
+// };
+
+// export class MapContainer extends Component {
+//   render() {
+//     return (
+//       <Map
+//         google={this.props.google}
+//         zoom={14}
+//         style={mapStyles}
+//         initialCenter={
+//           {
+//             lat: -1.2884,
+//             lng: 36.8233
+//           }
+//         }
+//       />
+//     );
+//   }
+// }
+// export default GoogleApiWrapper({
+//   apiKey: 'AIzaSyBOZAsPx9-btmZEjX12TC1Qxb-NcJIXqks'
+// })(MapContainer);
+
+
+// import { useMemo } from "react";
+// import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+
+// export default function Home() {
+//   const { isLoaded } = useLoadScript({
+//     googleMapsApiKey: "AIzaSyAcDg36tQXiqPYHYUx5uwssS1Ah-IYaNAg",
+//   });
+
+//   if (!isLoaded) return <div>Loading...</div>;
+//   return <Map />;
+// }
+
+// function Map() {
+
+//   const center = useMemo(() => ({ lat: -1.2884, lng: 36.8233 }), []);
+
+//   return (
+//     <GoogleMap 
+//     zoom={10} 
+//     center={center} 
+//     mapContainerClassName="map-container"
+//     >
+//       <Marker position={center} />
+//     </GoogleMap>
+//   );
+// }
+
+
+import { useState, useMemo } from "react";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+} from "@reach/combobox";
+import "@reach/combobox/styles.css";
+
+export default function MapComponent() {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyAcDg36tQXiqPYHYUx5uwssS1Ah-IYaNAg",
+    libraries: ["places"],
+  });
+
+  if (!isLoaded) return <div>Loading...</div>;
+  return <Map />;
 }
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBOZAsPx9-btmZEjX12TC1Qxb-NcJIXqks'
-})(MapContainer);
+function Map() {
+  const center = useMemo(() => ({ lat: -1.2884, lng: 36.8233 }), []);
+  const [selected, setSelected] = useState(null);
+
+  return (
+    <>
+      <div className="text-2xl font-bold flex-col flex items-center">
+        <h1 className='flex items-center flex-col text-justify mx-10 container'>Nearby Gym/Fitness Centers</h1>
+        <PlacesAutocomplete setSelected={setSelected} />
+      </div>
+
+      <GoogleMap
+        zoom={10}
+        center={center}
+        mapContainerClassName="map-container"
+      >
+        {selected && <Marker position={selected} />}
+      </GoogleMap>
+    </>
+  );
+}
+
+const PlacesAutocomplete = ({ setSelected }) => {
+  const {
+    ready,
+    value,
+    setValue,
+    suggestions: { status, data },
+    clearSuggestions,
+  } = usePlacesAutocomplete();
+
+  const handleSelect = async (address) => {
+    setValue(address, false);
+    clearSuggestions();
+
+    const results = await getGeocode({ address });
+    const { lat, lng } = await getLatLng(results[0]);
+    setSelected({ lat, lng });
+  };
+
+  return (
+    <Combobox onSelect={handleSelect}>
+      <ComboboxInput
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        disabled={!ready}
+        className="combobox-input"
+        placeholder="Search ..."
+      />
+      <ComboboxPopover>
+        <ComboboxList>
+          {status === "OK" &&
+            data.map(({ place_id, description }) => (
+              <ComboboxOption key={place_id} value={description} />
+            ))}
+        </ComboboxList>
+      </ComboboxPopover>
+    </Combobox>
+  );
+};
+
+
+

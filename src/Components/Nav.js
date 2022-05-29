@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Menu } from '@headlessui/react'
 import Bmi from './Bmi'
+import { Link } from "react-router-dom";
 
 
 
@@ -9,16 +10,16 @@ const Nav = () => {
   const[click, setClick] = useState(true)
     let Links =[
       {name:"Home",link:"/"},
-      {name:"About",link:"/"},
-      {name:"Equipment",link:"/"},
-      {name:"Find a Gym",link:"/"},
-      {name:"Pricing",link:"/"},
-      {name:"Contact",link:"/"},
+      {name:"About",link:"/about"},
+      {name:"Equipment",link:"/equipment"},
+      {name:"Find a Gym",link:"/find-a-gym"},
+      {name:"Pricing",link:"/pricing"},
+      {name:"Contact",link:"/contact"},
     ];
     let [open,setOpen]=useState(false);
   return (
     <div className='flex'>
-   <div className=' navbar shadow-md w-full fixed top-0 left-0'>
+   <div className=' navbar shadow-md w-full fixed mt-0 left-0'>
       <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
       <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
       text-white-800'>
@@ -36,28 +37,10 @@ const Nav = () => {
         {
           Links.map((link)=>(
             <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7'>
-              <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</a>
+              <Link to={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</Link>
             </li>
           ))
         }
-
-  {/* <Menu>
-<Menu.Button>
-  Bmi
-</Menu.Button>
-<Menu.Items>
-  <Menu.Item>
-  {({ active }) => (
-            <a
-              className={`${active && 'bg-blue-500'}`}
-              href="/account-settings"
-            >
-              Documentation
-            </a>
-          )}
-  </Menu.Item>
-</Menu.Items>
-  </Menu> */}
 
 
 

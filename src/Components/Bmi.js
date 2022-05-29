@@ -31,8 +31,10 @@ export default function App() {
   }
 
   return (
-    <div className="w-full max-w-xs m-10">
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+    <div className="my-5 mx-10 container w-full m-10">
+       <h1 className='text-center font-semibold text-2xl container'>Calculate BMI</h1>
+      <form className="bg-white shadow-md rounded px-10 mx-16 pt-6 pb-8 mb-4">
         <h1 className="text-center mb-4 text-xl"> BMI Calculator</h1>
         <div className="mb-4">
           <label
