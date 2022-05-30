@@ -9,6 +9,9 @@ import Bmi from './Components/Bmi'
 import Pricing from './Components/Pricing'
 import MapComponent from './Components/MapComponent';
 import PayPal from "./Components/Paypal";
+import Hero from './Components/Hero'
+
+
 
 
 
@@ -20,7 +23,14 @@ function App() {
   return (
 
     <>
-      <div className="App">
+    <div>
+<Nav />
+<Hero />
+<About />
+<Equipment />
+<Bmi />
+<Pricing />
+<div>
       {checkout ? (
         <PayPal />
       ) : (
@@ -33,12 +43,6 @@ function App() {
         </button>
       )}
     </div>
-    <div>
-<Nav />
-<About />
-<Equipment />
-<Bmi />
-<Pricing />
 
 <MapComponent />
 

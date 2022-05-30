@@ -4,11 +4,12 @@ import Paypal from './Paypal'
 const Pricing = () => {
   return (
    <>
+
   <section className="text-2xl font-bold flex-col flex items-center pt-6 pb-5 2xl:py-40">
-  <div className='font-semibold text-3xl mb-5'>Pricing</div>
+  <div className='mt-16 font-semibold text-3xl mb-0'>Pricing</div>
   <div className=" container mx-auto px-4">
     <div className="mb-16 md:mb-24 text-center">
-      <h2 className="mb-5 md:mb-8 text-5xl lg:text-6xl 2xl:text-7xl text-white font-bold font-heading">Choose a plan</h2>
+      <h2 className="mb-5 pt-16 md:mb-8 text-5xl lg:text-6xl 2xl:text-7xl text-white font-bold font-heading">Choose a plan</h2>
     </div>
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-wrap items-center -mx-3">
@@ -46,7 +47,9 @@ const Pricing = () => {
                 <span>1 Team Trainer </span>
               </li>
             </ul>
-            <div className="text-center"><a className="inline-block px-10 py-4 border border-gray-200 hover:border-gray-100 rounded-full font-bold text-white" href="#">Buy now</a></div>
+            <div className="text-center"><span className="inline-block px-10 py-4 border border-gray-200 hover:border-gray-100 rounded-full font-bold text-white">
+   
+         Buy now</span></div>
           </div>
         </div>
         <div className="w-full lg:w-1/3 px-3 mb-8 lg:mb-0">
@@ -99,7 +102,7 @@ const Pricing = () => {
                 <span>Money Payback guarantee</span>
               </li>
             </ul>
-            <div ClassName="text-center"><a ClassName="inline-block px-10 py-4 border border-blueGray-300 hover:border-blueGray-100 rounded-full font-bold text-white" href="#">Buy now</a></div>
+            <div ClassName="text-center"><span ClassName="inline-block px-10 py-4 border border-blueGray-300 hover:border-blueGray-100 rounded-full font-bold text-white"> <button></button></span></div>
           </div>
         </div>
         <div className="w-full lg:w-1/3 px-3">
@@ -136,7 +139,7 @@ const Pricing = () => {
                 <span>Access unlimited trainers</span>
               </li>
             </ul>
-            <div className="text-center"><a className="inline-block px-10 py-4 border border-gray-200 hover:border-gray-100 rounded-full font-bold text-white" href="#">Buy now</a></div>
+            <div className="text-center"><span className="inline-block px-10 py-4 border border-gray-200 hover:border-gray-100 rounded-full font-bold text-white">Buy now</span></div>
           </div>
         </div>
       </div>
