@@ -102,7 +102,8 @@ const Pricing = () => {
                 <span>Money Payback guarantee</span>
               </li>
             </ul>
-            <div ClassName="text-center"><span ClassName="inline-block px-10 py-4 border border-blueGray-300 hover:border-blueGray-100 rounded-full font-bold text-white"> <button></button></span></div>
+            <div className="text-center"><span className="inline-block px-10 py-4 border border-gray-200 hover:border-gray-100 rounded-full font-bold text-white">
+              Buy now</span></div>
           </div>
         </div>
         <div className="w-full lg:w-1/3 px-3">
