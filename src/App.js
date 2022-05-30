@@ -10,11 +10,25 @@ import Pricing from './Components/Pricing'
 import MapComponent from './Components/MapComponent';
 import PayPal from "./Components/Paypal";
 import Hero from './Components/Hero'
+import {getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import initializeAunthetication from "./Firebase/firebase.init";
 
 
 
 
+initializeAunthetication();
+const provider = new GoogleAuthProvider();
 
+const handleGoogleSignIn= () => {
+  const auth = getAuth ();
+
+  signInWithPopup (auth, provider)
+  .then (result=>{
+   const user = result.user
+   console.log (user);
+  })
+  
+}
 
 
 
@@ -23,6 +37,7 @@ function App() {
   return (
 
     <>
+     
     <div>
 <Nav />
 <Hero />
@@ -30,7 +45,7 @@ function App() {
 <Equipment />
 <Bmi />
 <Pricing />
-<div>
+ <div>
       {checkout ? (
         <PayPal />
       ) : (
@@ -43,8 +58,8 @@ function App() {
         </button>
       )}
     </div>
-
 <MapComponent />
+<button onClick={handleGoogleSignIn}>Google Sign in </button>
 
 <Footer />
     </div>
