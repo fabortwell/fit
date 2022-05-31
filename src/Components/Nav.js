@@ -121,7 +121,7 @@ const Nav = () => {
                         <Link to ='/pricing' onClick={closeMenu}>Pricing</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to ='/nearby-gym-fitness-centers' onClick={closeMenu}>MapComponent</Link>
+                        <Link to ='/map-component' onClick={closeMenu}>Nearby Gym</Link>
                     </li>
 
      <button className="bg-gray-900 text-white px-3 py-2 border hover:bg-gray-600 ml-8">

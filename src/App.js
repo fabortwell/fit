@@ -77,8 +77,8 @@ function App() {
   <Pricing/>
   </Route>
 
-  {/* <Route path="/calculate-bmi">
-  <Bmi/>
+  {/* <Route path="/nearby-places-fitness-centers">
+  <Nearby-Gym/>
   </Route> */}
 
 {/* 
