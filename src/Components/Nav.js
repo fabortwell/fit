@@ -74,6 +74,7 @@
 
 import React, { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import {Link} from "react-router-dom"
 
 import './Nav.css'
 
@@ -123,11 +124,13 @@ const Nav = () => {
                         <a href='#nearby-gym-fitness-centers' onClick={closeMenu}>Nearby Gym</a>
                     </li>
 
-                    <button className="bg-gray-900 text-white px-3 py-2 border hover:bg-gray-600 ml-8">
+     <button className="bg-gray-900 text-white px-3 py-2 border hover:bg-gray-600 ml-8">
          Sign in
-        </button>        <button className="bg-red-600 text-white px-3 py-2 border hover:bg-red-800 ml-8">
+        </button>       
+        
+         <Link to= "/signup" className="bg-red-600 text-white px-3 py-2 border hover:bg-red-800 ml-8">
           Sign Up
-       </button>
+       </Link>
                 </ul>
                 </div>
                 </div>

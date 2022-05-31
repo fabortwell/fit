@@ -1,69 +1,88 @@
 
 import React, { useState } from "react";
-import './App.css';
-import Nav from './Components/Nav'
-import About from './Components/About';
-import Equipment from './Components/Equipment';
-import Footer from './Components/Footer'
-import Bmi from './Components/Bmi'
-import Pricing from './Components/Pricing'
-import MapComponent from './Components/MapComponent';
-import PayPal from "./Components/Paypal";
-import Hero from './Components/Hero'
-import {getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import initializeAunthetication from "./Firebase/firebase.init";
+import app from "./Firebase/firebase";
+import { Switch, Route } from "react-router-dom";
+import Home from "./Components/Home"
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import SignUp from "./Components/SignUp";
+// import SignIn from "./Components/SignIn";
+import Equipment from "./Components/Equipment";
+import Nav from "./Components/Nav";
+import About from "./Components/About";
 
 
 
 
-initializeAunthetication();
-const provider = new GoogleAuthProvider();
 
-const handleGoogleSignIn= () => {
-  const auth = getAuth ();
 
-  signInWithPopup (auth, provider)
-  .then (result=>{
-   const user = result.user
-   console.log (user);
+const auth = getAuth(app);
+
+export function signUp(email, password) {
+ return createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user)
   })
-  
+  .catch((error) => {
+    const errorCode = error.code;
+    console.log(errorCode)
+    const errorMessage = error.message;
+    console.log(errorMessage)
+  });
+
 }
 
 
 
+// export function signIn(email, password) {
+ 
+// return signInWithEmailAndPassword(auth, email, password)
+//   .then((userCredential) => {
+//     // Signed in 
+//     const user = userCredential.user;
+//     console.log(user)
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     console.log(errorCode)
+//     const errorMessage = error.message;
+//     console.log(errorMessage)
+//   });
+// }
+
 function App() {
   const [checkout, setCheckOut] = useState(false);
   return (
+<Switch>
+  <Route path="/" exact>
+  <Home/>
+  </Route>
 
-    <>
-     
-    <div>
-<Nav />
-<Hero />
-<About />
-<Equipment />
-<Bmi />
-<Pricing />
- <div>
-      {checkout ? (
-        <PayPal />
-      ) : (
-        <button
-          onClick={() => {
-            setCheckOut(true);
-          }}
-        >
-          checkout
-        </button>
-      )}
-    </div>
-<MapComponent />
-<button onClick={handleGoogleSignIn}>Google Sign in </button>
+  <Route path="/signup" exact>
+  <SignUp/>
+  </Route>
 
-<Footer />
-    </div>
-    </>
+  {/* <Route path="/signin">
+  <SignIn/>
+  </Route> */}
+
+  {/* <Route path="/about" exact>
+  <About/>
+  </Route>
+
+
+  <Route path="/equipment" exact>
+  <equipment/>
+  </Route> */}
+
+
+  {/* <Route path="/bmi">
+  <Bmi/>
+  </Route> */}
+
+</Switch>
+
   );
 }
 

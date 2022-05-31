@@ -1,5 +1,5 @@
 import React from 'react'
-import Paypal from './Paypal'
+
 
 const Pricing = () => {
   return (
@@ -103,6 +103,7 @@ const Pricing = () => {
               </li>
             </ul>
             <div className="text-center"><span className="inline-block px-10 py-4 border border-gray-200 hover:border-gray-100 rounded-full font-bold text-white">
+
               Buy now</span></div>
           </div>
         </div>
