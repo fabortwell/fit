@@ -109,19 +109,19 @@ const Nav = () => {
                         <a href='/' onClick={closeMenu}>Home</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#about' onClick={closeMenu}>About</a>
+                        <Link to ='/about' onClick={closeMenu}>About</Link>
                     </li>
                     <li className='nav-item'>
-                        <a href='#equipment' onClick={closeMenu}>Equipment</a>
+                        <Link to ='/equipment' onClick={closeMenu}>Equipment</Link>
                     </li>
                     <li className='nav-item'>
-                        <a href='#calculate-bmi' onClick={closeMenu}>Bmi</a>
+                        <Link to ='/calculate-bmi' onClick={closeMenu}>Bmi</Link>
                     </li>
                     <li className='nav-item'>
-                        <a href='#pricing' onClick={closeMenu}>Pricing</a>
+                        <Link to ='/pricing' onClick={closeMenu}>Pricing</Link>
                     </li>
                     <li className='nav-item'>
-                        <a href='#nearby-gym-fitness-centers' onClick={closeMenu}>Nearby Gym</a>
+                        <Link to ='/nearby-gym-fitness-centers' onClick={closeMenu}>MapComponent</Link>
                     </li>
 
      <button className="bg-gray-900 text-white px-3 py-2 border hover:bg-gray-600 ml-8">

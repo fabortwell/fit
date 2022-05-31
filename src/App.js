@@ -7,8 +7,8 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } f
 import SignUp from "./Components/SignUp";
 // import SignIn from "./Components/SignIn";
 import Equipment from "./Components/Equipment";
-import Nav from "./Components/Nav";
 import About from "./Components/About";
+import Pricing from "./Components/Pricing";
 
 
 
@@ -63,6 +63,30 @@ function App() {
   <SignUp/>
   </Route>
 
+
+
+  <Route path="/about">
+  <About/>
+  </Route>
+
+  <Route path="/equipment">
+  <Equipment/>
+  </Route>
+
+  <Route path="/pricing">
+  <Pricing/>
+  </Route>
+
+  {/* <Route path="/calculate-bmi">
+  <Bmi/>
+  </Route> */}
+
+{/* 
+  <Route path="gym">
+  <MapComponent/>
+  </Route> */}
+
+
   {/* <Route path="/signin">
   <SignIn/>
   </Route> */}
@@ -74,7 +98,7 @@ function App() {
 
   <Route path="/equipment" exact>
   <equipment/>
-  </Route> */}
+  </Route> 
 
 
   {/* <Route path="/bmi">
