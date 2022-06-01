@@ -2,11 +2,12 @@
 .photo{
 height: 250px;
 }
-/* 
-.hero-img{
-  position: relative;
 
-} */
+
+.hero-img{
+  padding-top: 5rem;
+
+}
 
 html,
 body {
